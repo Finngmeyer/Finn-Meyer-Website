@@ -377,7 +377,7 @@
     img, video, svg, iframe { max-width: 100%; }
     * { word-break: break-word; }
     .btn-primary, .btn-secondary, .project-link, .contact-card, .tag, .nav-cta { word-break: normal; }
-    /* ── Project tabs ── */
+    /* Project tabs */
     .proj-tabs {
       display: flex; gap: 0.5rem; margin-bottom: 2.5rem;
       border-bottom: 2px solid var(--border); padding-bottom: 0;
@@ -444,7 +444,6 @@
       display: flex; align-items: center; justify-content: center;
       padding: 1rem;
       opacity: 0; pointer-events: none; transition: opacity 0.2s;
-      /* Allow the overlay itself to scroll on iOS when modal is tall */
       overflow-y: auto; -webkit-overflow-scrolling: touch;
     }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
@@ -452,13 +451,10 @@
       background: var(--white); border-radius: 16px; width: 100%; max-width: 560px;
       box-shadow: 0 32px 80px rgba(10,15,26,0.25);
       overflow: hidden;
-      /* Let modal scroll internally if content is taller than viewport */
       max-height: calc(100dvh - 2rem);
       display: flex; flex-direction: column;
       transform: translateY(16px); transition: transform 0.22s;
-      /* Prevent modal motion from bubbling scroll to page */
       overscroll-behavior: contain;
-      /* Ensure it sits inside the overlay on short screens */
       margin: auto;
     }
     .modal-overlay.open .modal { transform: translateY(0); }
@@ -473,25 +469,21 @@
     .modal-title {
       font-family: 'Source Serif 4', serif; font-size: 1.4rem;
       font-weight: 600; color: var(--white); line-height: 1.2;
-      /* Leave room so title doesn't slide under close button */
       padding-right: 2.5rem;
     }
     .modal-close {
       position: absolute; top: 1rem; right: 1rem;
-      /* 44px tap target for mobile */
       width: 44px; height: 44px; border-radius: 50%;
       border: 1px solid rgba(255,255,255,0.2);
       background: rgba(255,255,255,0.08); color: var(--white);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem; cursor: pointer; transition: background 0.15s;
       padding: 0; flex-shrink: 0;
-      /* Make sure it's always tappable */
       touch-action: manipulation;
     }
     .modal-close:hover { background: rgba(255,255,255,0.22); }
     .modal-body {
       padding: 1.75rem 2rem;
-      /* This is the scrollable part on mobile */
       overflow-y: auto; -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
     }
@@ -563,9 +555,9 @@
       <div class="hero-eyebrow">Finn Meyer · Portfolio</div>
       <h1>Manufacturing &amp; <em>Supply Chain</em>.</h1>
       <p class="hero-subtitle">
-        A collection of projects I'm proud of — coursework from the Manufacturing
-        and Supply Chain program at Western Washington University alongside things
-        I built out of my own curiosity.
+        A collection of projects I'm proud of. Many came out of coursework from the Manufacturing
+        and Supply Chain program at Western Washington University, and some I
+        built out of my own curiosity.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View Projects</a>
@@ -591,7 +583,7 @@
         <div>
           <span class="visual-badge">Featured Work</span>
           <div class="visual-title">Warehouse Location Optimizer</div>
-          <div class="visual-subtitle">Multi-criteria facility-location tool evaluating cities against supplier demand</div>
+          <div class="visual-subtitle">A facility location tool that evaluates 140+ US cities against supplier demand using a weighted mix of cost, labor, and workforce factors</div>
         </div>
         <div class="visual-stats">
           <div class="visual-stat">
@@ -625,13 +617,13 @@
         <p>
           I'm studying Manufacturing and Supply Chain Management at
           <strong>Western Washington University</strong>. Most of what's here started
-          as coursework — papers, analyses, and projects from the program — but some
+          as coursework: papers, analyses, and projects from the program. But some
           of it I just built because I wanted to see if I could.
         </p>
         <p>
           I'm drawn to the data and technology side of supply chains: forecasting,
           network design, and finding places where better decisions lead to real
-          efficiency gains. I'm actively looking for full-time roles after graduating
+          efficiency gains. I'm actively looking for full time roles after graduating
           in December 2026.
         </p>
       </div>
@@ -696,10 +688,10 @@
           </div>
           <div class="project-body">
             <p class="project-desc">
-              An interactive facility-location tool that goes beyond traditional Center of Gravity
-              analysis. It evaluates 140+ US cities against supplier demand using a multi-criteria
-              model weighting transport cost, labor, land, and workforce availability. K-medoids
-              clustering handles multi-warehouse networks.
+              An interactive facility location tool that goes beyond traditional Center of Gravity
+              analysis. It evaluates 140+ US cities against supplier demand using a weighted model
+              that factors in transport cost, labor, land, and workforce availability. K-medoids
+              clustering handles networks with multiple warehouses.
             </p>
             <div class="project-tags">
               <span class="tag">Network Design</span>
@@ -870,7 +862,7 @@
         <div class="skill-title">Analysis</div>
         <ul class="skill-list">
           <li>Process Mapping</li><li>Value Stream Mapping</li>
-          <li>Cost-Benefit Analysis</li><li>Data Visualization</li>
+          <li>Cost and Benefit Analysis</li><li>Data Visualization</li>
           <li>Root Cause Analysis</li>
         </ul>
       </div>
@@ -891,7 +883,7 @@
     <div class="section-header">
       <div class="contact-status">Open to Opportunities</div>
       <h2>Get in <em>touch</em>.</h2>
-      <p class="section-intro">I'm actively looking for full-time roles after graduating in December 2026. Feel free to reach out.</p>
+      <p class="section-intro">I'm actively looking for full time roles after graduating in December 2026. Feel free to reach out.</p>
     </div>
     <div class="contact-grid">
       <a href="mailto:finngrantmeyer@gmail.com" class="contact-card">
@@ -902,7 +894,6 @@
         <span class="contact-icon">&#128279;</span>
         <span>LinkedIn Profile</span>
       </a>
-
     </div>
   </div>
 </section>
@@ -912,7 +903,7 @@
 </footer>
 
 <script>
-  // ── Mobile nav ──
+  // Mobile nav
   const toggle = document.getElementById('navToggle');
   const menu   = document.getElementById('mobileMenu');
   toggle.addEventListener('click', () => {
@@ -927,7 +918,7 @@
   }
   window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMobile(); });
 
-  // ── Project tabs ──
+  // Project tabs
   function switchTab(id) {
     document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
@@ -935,21 +926,21 @@
     document.getElementById('panel-' + id).classList.add('active');
   }
 
-  // ── AI project data ──
+  // AI project data
   const AI_PROJECTS = {
     spotify: {
       label: 'Machine Learning · Python',
       title: 'Spotify Recommendation Lab',
-      desc: 'This project builds a music recommendation system using real Spotify track data, exploring two of the dominant approaches in the industry: collaborative filtering (recommending based on what similar users liked) and content-based filtering (recommending based on the audio features of songs you already enjoy). The lab walks through building, evaluating, and comparing both approaches end-to-end.',
-      learned: 'How recommendation engines actually work under the hood, the trade-offs between collaborative and content-based methods, how to handle sparse user-item matrices, and why personalization at scale is a core driver of retention in streaming platforms like Spotify and Netflix.',
+      desc: 'This project builds a music recommendation system using real Spotify track data, exploring two of the dominant approaches in the industry: collaborative filtering (recommending based on what similar users liked) and audio feature filtering (recommending based on the characteristics of songs you already enjoy). The lab walks through building, evaluating, and comparing both approaches end to end.',
+      learned: 'How recommendation engines actually work under the hood, the trade-offs between collaborative and feature-based methods, how to handle sparse matrices of user listening data, and why personalization at scale is a core driver of retention in streaming platforms like Spotify and Netflix.',
       tags: ['Recommender Systems', 'Python', 'Machine Learning', 'Collaborative Filtering'],
       url: 'https://finngmeyer.github.io/spotify-recommendation-lab/'
     },
     uber: {
       label: 'Demand Forecasting · Python',
       title: 'Uber Demand Forecasting Project',
-      desc: 'A full forecasting pipeline applied to Uber ridership demand near WWU\'s campus in Bellingham. The project simulates two years of Friday night trip data, engineers calendar features (trend, seasonality, school-year effect, NYE spike), trains a linear regression model, and backtests it against held-out data. The validated model then generates a real operations recommendation for a sold-out concert night.',
-      learned: 'Feature engineering for time-series data, chronological train/test splits to avoid data leakage, evaluating models with MAE and MAPE, stress-testing forecast assumptions, and how distribution shift (Lyft entering the market, enrollment changes) can silently break a deployed AI system weeks after launch.',
+      desc: "A full forecasting pipeline applied to Uber ridership demand near WWU's campus in Bellingham. The project simulates two years of Friday night trip data, engineers calendar features (trend, seasonality, school year effect, NYE spike), trains a linear regression model, and backtests it against held-out data. The validated model then generates a real operations recommendation for a major sold out concert night.",
+      learned: 'Feature engineering for time series data, chronological train and test splits to avoid data leakage, evaluating models with MAE and MAPE, pressure testing forecast assumptions, and how distribution shift (Lyft entering the market, enrollment changes) can silently break a deployed AI system weeks after launch.',
       tags: ['Time Series', 'Linear Regression', 'Python', 'scikit-learn', 'Demand Forecasting'],
       url: 'https://finngmeyer.github.io/Uber-Demand-Forecasting-Project/'
     },
@@ -957,21 +948,21 @@
       label: 'Statistics · A/B Testing',
       title: 'Netflix A/B Testing Analysis',
       desc: 'A statistical analysis project simulating how Netflix runs controlled experiments to test new product features. It covers experimental design, hypothesis testing, p-value interpretation, confidence intervals, and the critical difference between statistical significance and practical significance in a product context.',
-      learned: 'How large tech companies structure A/B tests to make data-driven product decisions, when a statistically significant result still isn\'t worth shipping, how to communicate test results clearly to non-technical stakeholders, and the common pitfalls that lead to false conclusions in online experiments.',
+      learned: "How large tech companies structure A/B tests to make decisions grounded in data, when a statistically significant result still isn't worth shipping, how to communicate test results clearly to people outside the technical team, and the common pitfalls that lead to false conclusions in online experiments.",
       tags: ['A/B Testing', 'Hypothesis Testing', 'Python', 'Statistics', 'Product Analytics'],
       url: 'https://finngmeyer.github.io/Netflix-AB-Testing/'
     },
     everycure: {
       label: 'AI · Healthcare',
       title: 'Everycure Drug Repurposing System',
-      desc: 'Inspired by Everycure\'s mission, this project applies AI and machine learning to identify existing FDA-approved drugs that may be effective for rare diseases they weren\'t originally designed to treat. The system maps known drug-disease relationships and surfaces non-obvious connections. This is the same approach that found thalidomide, originally a sedative, to be effective for certain cancers.',
-      learned: 'How AI is being applied in healthcare to accelerate drug discovery at a fraction of traditional R&D costs, the concept of graph-based ML for identifying patterns in complex biomedical data, and the ethical considerations of deploying AI in high-stakes medical contexts where a false positive or false negative has real human consequences.',
+      desc: "Inspired by Everycure's mission, this project applies AI and machine learning to identify existing drugs already approved by the FDA that may be effective for rare diseases they weren't originally designed to treat. The system maps known drug-disease relationships and surfaces connections that wouldn't be obvious otherwise. This is the same approach that found thalidomide, originally a sedative, to be effective for certain cancers.",
+      learned: 'How AI is being applied in healthcare to accelerate drug discovery at a fraction of traditional R&D costs, the concept of graph based ML for identifying patterns in complex biomedical data, and the ethical considerations of deploying AI in medical contexts where a false positive or false negative has real human consequences.',
       tags: ['Drug Discovery', 'AI/ML', 'Healthcare', 'Python', 'Graph Analysis'],
       url: 'https://finngmeyer.github.io/Everycure-Drug-Repurposing-System/'
     }
   };
 
-  // ── Modal ──
+  // Modal
   let scrollY = 0;
 
   function openModal(id) {
@@ -985,7 +976,7 @@
     tagsEl.innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
     document.getElementById('modalOverlay').classList.add('open');
 
-    // iOS-safe scroll lock: freeze body at current position
+    // iOS-safe scroll lock
     scrollY = window.scrollY;
     document.body.style.position = 'fixed';
     document.body.style.top      = `-${scrollY}px`;
@@ -994,8 +985,6 @@
 
   function closeModal() {
     document.getElementById('modalOverlay').classList.remove('open');
-
-    // Restore scroll position
     document.body.style.position = '';
     document.body.style.top      = '';
     document.body.style.width    = '';
